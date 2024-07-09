@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:gen-types": "supabase gen types typescript --linked > ./src/types/database.types.ts"
   },
   "dependencies": {
     "@grapesjs/react": "^1.0.0",
+    "@supabase/supabase-js": "^2.44.3",
     "@types/node": "20.14.10",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",

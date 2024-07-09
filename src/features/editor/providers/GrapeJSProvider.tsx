@@ -1,12 +1,7 @@
 "use client";
 
-import grapesjs, {
-  CanvasConfig,
-  Editor,
-  EditorConfig,
-  StorageManagerConfig,
-} from "grapesjs";
-import GjsEditor, { BlocksProvider, Canvas } from "@grapesjs/react";
+import grapesjs, { Editor } from "grapesjs";
+import GjsEditor from "@grapesjs/react";
 import { PropsWithChildren } from "react";
 
 export function GrapeJSProvider(props: PropsWithChildren) {
@@ -24,12 +19,8 @@ export function GrapeJSProvider(props: PropsWithChildren) {
       grapesjsCss="https://unpkg.com/grapesjs/dist/css/grapes.min.css"
       // GrapesJS init options
       options={{
-        // height: "100%",
-        // width: "100%",
-        // canvas: {},
-        // storageManager,
         blockManager: {
-          appendTo: "#blocks",
+          // appendTo: "#blocks",
           blocks: [
             {
               id: "section", // id is mandatory
@@ -59,20 +50,35 @@ export function GrapeJSProvider(props: PropsWithChildren) {
             },
           ],
         },
-        // selectorManager: { componentFirst: true },
-        // panels: {},
         panels: {
           defaults: [],
         },
         projectData: {
-          pages: [
-            {
-              name: "homepage",
-              content: `<div>Hello world</div>`,
-            },
-          ],
+          // pages: [
+          //   {
+          //     name: "homepage",
+          //     content: `<div>Hello world</div>`,
+          //   },
+          // ],
         },
         container: "#editor-container",
+        // storageManager: {
+        //   type: "remote",
+        //   options: {
+        //     remote: {
+        //       onStore: (data, editor) => {
+        //         console.log("onStore", { data, editor });
+        //         return data;
+        //       },
+        //       onLoad: (editor) => {
+        //         return editor.data;
+        //       },
+        //     },
+        //   },
+        // },
+        storageManager: {
+          type: "remote",
+        },
       }}
       onEditor={onEditor}
       plugins={[
