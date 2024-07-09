@@ -5,7 +5,7 @@ import GjsEditor, {
   Canvas,
   LayersProvider,
 } from "@grapesjs/react";
-import { GrapeJSProvider } from "@/features/editor/providers/GrapejsProvider";
+import { GrapeJSProvider } from "@/features/editor/providers/GrapeJSProvider";
 import { EditorHeader } from "@/features/editor/views/EditorHeader/EditorHeader";
 import { SidebarManagerBlock } from "@/features/editor/views/SidebarManagerBlock/SidebarManagerBlock";
 import { Box, Tabs } from "@radix-ui/themes";
