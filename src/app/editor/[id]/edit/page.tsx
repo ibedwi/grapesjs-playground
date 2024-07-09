@@ -48,7 +48,9 @@ export default function DefaultEditor() {
               <div className="flex-grow h-full">
                 <Canvas />
               </div>
-              <div className="w-[300px] border-l bg-white">Sytles</div>
+              <div className="w-[300px] border-l bg-white">
+                Styles goes here...
+              </div>
             </div>
           </div>
         </GrapeJSProvider>

@@ -114,9 +114,7 @@ export function EditorHeader() {
       if (error) {
         console.error(error);
       } else {
-        if (data) {
-          console.log(data);
-          console.log("project_data", data.project_data);
+        if (data && data.project_data) {
           editor?.loadProjectData(data.project_data as ProjectData);
         }
       }
