@@ -2,9 +2,11 @@
 
 import { supabaseClient } from "@/utils/supabaseClient";
 import { useEditor, useEditorMaybe } from "@grapesjs/react";
+import { IconButton, Tooltip } from "@radix-ui/themes";
 import { ProjectData } from "grapesjs";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
+import { FaSave } from "react-icons/fa";
 
 const template = {
   assets: [],
@@ -126,14 +128,18 @@ export function EditorHeader() {
   }, [param, editor]);
 
   return (
-    <nav className="min-h-[50px] flex flex-row justify-between items-center bg-gray-100 px-4 py-2">
+    <nav className="min-h-[50px] flex flex-row justify-between items-center border-b bg-white px-4 py-2">
       <p>Editor</p>
       <section>
         <p>Project Name</p>
       </section>
       <section className="flex flex-row gap-3">
-        <button onClick={onLoad}>Load</button>
-        <button onClick={onSave}>Save</button>
+        {/* <button onClick={onLoad}>Load</button> */}
+        <Tooltip content="Save">
+          <IconButton onClick={onSave}>
+            <FaSave />
+          </IconButton>
+        </Tooltip>
       </section>
     </nav>
   );

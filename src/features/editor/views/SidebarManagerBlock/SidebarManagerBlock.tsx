@@ -15,12 +15,13 @@ export function SidebarManagerBlock({
 }: CustomBlockManagerProps) {
   return (
     <div className="p-3">
-      <Text variant={"secondary"} size={"sm"} weight={"medium"}>
-        Basic Blocks
-      </Text>
       {Array.from(mapCategoryBlocks).map(([category, blocks]) => (
         <div key={category}>
-          <div className={"py-2 px-4 border-y"}>{category}</div>
+          <div className={"py-2 border-y"}>
+            <Text variant={"secondary"} size={"sm"} weight={"medium"}>
+              {category}
+            </Text>
+          </div>
           <div className="grid grid-cols-2 gap-2 p-2">
             {blocks.map((block) => (
               <div
